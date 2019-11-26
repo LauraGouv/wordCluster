@@ -26,7 +26,7 @@ for word in words:
     clean_vector.append(word[0].split(" "))
 
 #treinando o modelo de wordvec
-model = Word2Vec(sg=0, ns_exponent=0.75,min_count=1, size=32, workers=1, seed = 1234)
+model = Word2Vec(sg=0, ns_exponent=0.75,min_count=1, size=32, workers=1, seed = 121)
 model.build_vocab(clean_words, progress_per=10000)
 model.train(clean_words, total_examples=model.corpus_count, epochs=30, report_delay=1)
 print('modelo de palavras iniciado')
