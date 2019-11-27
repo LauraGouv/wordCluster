@@ -4,7 +4,7 @@ Esse script pega um lista de palavras na pasta data, e os agrupa semânticamente
  
 ## Getting Started
 
-Basta baixar o script.py com a pasta data, e rodar o script com algum compilador python com as devidas bibliotecas instaladas.
+Basta baixar o wordCluster.py com a pasta data, e rodar o script com algum compilador python com as devidas bibliotecas instaladas.
 
 ### Prerequisites
 
@@ -18,8 +18,7 @@ Scikit
 
 ## Running the tests
 
-Ao rodar o script, automaticamente será gerado o arquivo 'clusters.csv' com a resposta dos clusters encontrados
-
+Ao rodar o script, será requisitado ao termino da clusterização o nome de arquivo para ser salvo, salvando por fim em formato csv.
 ## Built With
 
 * Anaconda
