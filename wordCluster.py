@@ -8,7 +8,7 @@ import nltk
 import os
 
 #constantes:
-num_clusters = 700
+num_clusters = 1620
 
 #iniciando o script
 print('iniciando o script')
@@ -71,7 +71,7 @@ from sklearn.cluster import KMeans
 
 #Fazendo o agrupamento pelo K-Means depois de reduzir as dimensões
 #treinando o modelo
-clustering = KMeans(n_clusters=num_clusters,  init='k-means++', random_state=0, n_jobs=1)
+clustering = KMeans(n_clusters=num_clusters,  init='k-means++', random_state=4, n_jobs=1)
 clustering.fit(sne_pd[['X','Y']])
 predictClusterKMeans = clustering.predict(sne_pd[['X','Y']])
 sne_pd['Group'] = predictClusterKMeans
