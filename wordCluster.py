@@ -26,9 +26,9 @@ for word in words:
     clean_vector.append(word[0].split(" "))
 
 #treinando o modelo de wordvec
-model = Word2Vec(sg=0, ns_exponent=0.75,min_count=1, size=32, workers=1, seed = 121)
+model = Word2Vec(sg=0, ns_exponent=0.75,min_count=1, size=32, workers=1, seed = 8)
 model.build_vocab(clean_words, progress_per=10000)
-model.train(clean_words, total_examples=model.corpus_count, epochs=30, report_delay=1)
+model.train(clean_words, total_examples=model.corpus_count, epochs=60, report_delay=1)
 print('modelo de palavras iniciado')
 
 #criando o vetor de palavras
@@ -71,7 +71,7 @@ from sklearn.cluster import KMeans
 
 #Fazendo o agrupamento pelo K-Means depois de reduzir as dimensões
 #treinando o modelo
-clustering = KMeans(n_clusters=num_clusters, random_state=0)
+clustering = KMeans(n_clusters=num_clusters,  init='k-means++', random_state=0, n_jobs=1)
 clustering.fit(sne_pd[['X','Y']])
 predictClusterKMeans = clustering.predict(sne_pd[['X','Y']])
 sne_pd['Group'] = predictClusterKMeans
